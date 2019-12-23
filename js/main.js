@@ -22,7 +22,9 @@ function getInfo(event){
     // console.log('Hello')
     // console.log(input)
   // city.innerHTML= getInput.value
+  cityName.innerHTML= "City Name"
   cityName.append(": "+ getInput)
+ 
 
   let url= (`http://api.openweathermap.org/data/2.5/weather?q=${getInput}&units=imperial&appid=e035818f654f2bd9508a6d45c0efc40b`)
 
@@ -32,14 +34,22 @@ function getInfo(event){
       let currentTemp= document.querySelector('#temp')
       // console.log(currentTemp)
     // currentTemp.innerHTML= res.data.main.temp
+    currentTemp.innerHTML="Current Temperature"
     currentTemp.append(": "+ res.data.main.temp)
+    
     let wDescrip= document.querySelector('#description')
+    wDescrip.innerHTML="Weather Description"
     wDescrip.append(": " + res.data.weather[0]["description"])
     let minTemp= document.querySelector('#min')
+    minTemp.innerHTML="Min temp"
     minTemp.append(": "+ res.data.main.temp_min)
     let maxTemp= document.querySelector('#max')
+    maxTemp.innerHTML="Max temp"
     maxTemp.append(": "+ res.data.main.temp_max)
       })
+
+  document.querySelector("#city").value= ""
+  
 
   // let dataDescription = axios.get(url).then(res=>{
   //   let wDescrip= document.querySelector('#description')
@@ -60,6 +70,8 @@ function getInfo(event){
     // alert(getInput)
     // return getInput
 }
+
+// function resetForm(form)
 
 
 // console.log(getInput)
